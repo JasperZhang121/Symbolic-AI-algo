@@ -23,6 +23,3 @@ def uniform_cost(graph, start_node="A", end_node="D"):
             pq.put((new_cost, neighbor, new_path))
 
     return False
-
-
-

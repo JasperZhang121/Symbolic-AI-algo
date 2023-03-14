@@ -39,8 +39,3 @@ if __name__ == '__main__':
 
     isFoundUniform = Algo.uniform_cost(gd)
     print(isFoundUniform)
-
-
-
-
-
