@@ -5,6 +5,7 @@ from Graph import graph as g
 from Graph import graph_distance as gd
 
 import Algo
+from Graph.grid import Grid
 
 if __name__ == '__main__':
     # visualize graph for testing algo
@@ -39,3 +40,12 @@ if __name__ == '__main__':
 
     isFoundUniform = Algo.uniform_cost(gd)
     print(isFoundUniform)
+
+    # use grid data struct
+    start = (0, 0)
+    target = (4, 4)
+    obstacles = {(2, 2), (3, 2), (2, 3), (3, 3)}
+    grid = Grid(5, 5, obstacles)
+
+    print(Algo.a_star_search(grid, start, target))
+    print(Algo.a_star_search(grid, start, (4, 3)))
