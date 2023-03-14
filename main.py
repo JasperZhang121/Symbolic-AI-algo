@@ -1,7 +1,9 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-import graph as g
+from Graph import graph as g
+from Graph import graph_distance as gd
+
 import Algo
 
 if __name__ == '__main__':
@@ -25,3 +27,20 @@ if __name__ == '__main__':
     # IDS
     isFoundIDS = Algo.iterative_deepening_search(g, "A", "T")
     print(isFoundDFS)
+
+    # Graph with distance ----------------------------------------------------------------------------------------------
+
+    # Uniform-Cost Search
+    gd = gd.graph3
+    G = nx.DiGraph(gd)
+    # draw the graph
+    nx.draw(G, with_labels=True)
+    plt.show()
+
+    isFoundUniform = Algo.uniform_cost(gd)
+    print(isFoundUniform)
+
+
+
+
+
