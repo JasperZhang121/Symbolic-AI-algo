@@ -29,6 +29,12 @@ if __name__ == '__main__':
     isFoundIDS = Algo.iterative_deepening_search(g, "A", "T")
     print(isFoundDFS)
 
+    #
+    gdd = gd.graph2
+
+    isFoundIDS_Not_uniform_cost = Algo.ids_not_uniformed_cost(gdd, "A", "F")
+    print(isFoundDFS)
+
     # Graph with distance ----------------------------------------------------------------------------------------------
 
     # Uniform-Cost Search
@@ -49,3 +55,4 @@ if __name__ == '__main__':
 
     print(Algo.a_star_search(grid, start, target))
     print(Algo.a_star_search(grid, start, (4, 3)))
+
