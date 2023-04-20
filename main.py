@@ -7,6 +7,8 @@ from Graph import graph_distance as gd
 import Algo
 from Graph.grid import Grid
 
+from CSP import Csp
+
 if __name__ == '__main__':
     # visualize graph for testing algo
     g = g.graph3
@@ -55,4 +57,27 @@ if __name__ == '__main__':
 
     print(Algo.a_star_search(grid, start, target))
     print(Algo.a_star_search(grid, start, (4, 3)))
+
+    # CSP starts ------------------------------------------------------------------------------------------------------
+
+    print("\nCSP: \n")
+
+    regions = ['WA', 'NT', 'SA', 'Q', 'NSW', 'V', 'T']
+    colors = ['red', 'green', 'blue']
+    neighbors = {
+        'WA': ['NT', 'SA'],
+        'NT': ['WA', 'SA', 'Q'],
+        'SA': ['WA', 'NT', 'Q', 'NSW', 'V'],
+        'Q': ['NT', 'SA', 'NSW'],
+        'NSW': ['Q', 'SA', 'V'],
+        'V': ['SA', 'NSW'],
+        'T': []
+    }
+
+    mappingProblem = Csp.MapColoringCSP(regions,colors,neighbors)
+    print(mappingProblem.get_assignment())
+
+    mappingProblem.assign('WA', 'red')
+    print(mappingProblem.get_assignment())
+
 
