@@ -12,7 +12,7 @@ I'm excited to explore Symbolic AI and its different algorithms and logic reason
 - The first part of this repository will focus on search algorithms. I will continue to add more content as I learn and explore new topics in AI.
 
 - The second part is about constraint satisfaction problems, mostly. If you're interested in logical reasoning or KRR, check out:
-  - [Vaults](https://github.com/JasperZhang121/Vaults/tree/main/Artificial%20Intelligence/Symbolic%20AI/3.%20KRR)  
+  - [KRR](https://github.com/JasperZhang121/Vaults/tree/main/Artificial%20Intelligence/Symbolic%20AI/3.%20KRR)  
   - [Logic](https://github.com/JasperZhang121/Logic)
 
 - The renowned book, [Artificial Intelligence: A Modern Approach (3rd Edition)](https://github.com/JasperZhang121/Symbolic-AI-algo/tree/master/AIMA_3rd_edition), has been uploaded to the folder. Even if you're a fan of ML, you can still have some fun exploring the book to learn more about traditional AI.
