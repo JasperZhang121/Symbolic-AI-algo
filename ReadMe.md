@@ -26,7 +26,7 @@ _I'm excited to explore Symbolic AI and its different algorithms and logic reaso
   - STRIPS, PDDL, ADL
 
 - _If you're interested in logical reasoning or KRR, check out:_
-  - [KRR](https://github.com/JasperZhang121/Vaults/tree/main/Artificial%20Intelligence/Symbolic%20AI/3.%20KRR)  
+  - [KRR](https://github.com/JasperZhang121/Vaults/tree/main/Artificial%20Intelligence/Symbolic%20AI/2.%20KRR/0.%20Concepts) 
   - [Logic](https://github.com/JasperZhang121/Logic)
     
 - _The renowned book, [Artificial Intelligence: A Modern Approach (3rd Edition)](https://github.com/JasperZhang121/Symbolic-AI-algo/tree/master/AIMA_3rd_edition), has been uploaded to the folder. Even if you're a fan of ML, you can still have some fun exploring the book to learn more about traditional AI._
