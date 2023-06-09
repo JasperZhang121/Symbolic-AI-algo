@@ -42,6 +42,6 @@ _For search algorithms, I will not use a tree, but instead, I will use mazes, gr
 ## Extra:
 
 _I will provide detailed docstrings for each algorithm._
-Last update date: 03/06/2023
+Last update date: 10/06/2023
 
 
