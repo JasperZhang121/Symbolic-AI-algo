@@ -1,8 +1,9 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import Algo
-from CSP.solver import backtrack
+import time
 
+from CSP.solver import backtrack, backtrack_AC_3
 from Graph import graph as g
 from Graph import graph_distance as gd
 from Graph.grid import Grid
@@ -58,11 +59,10 @@ if __name__ == '__main__':
     print(Algo.a_star_search(grid, start, (4, 3)))
 
     # CSP starts ------------------------------------------------------------------------------------------------------
-
-    print("\nCSP: \n")
+    print("\n Simple CSP: \n")
 
     regions = ['WA', 'NT', 'SA', 'Q', 'NSW', 'V', 'T']
-    colors = ['red', 'green', 'blue']
+    colors = ['red', 'green', 'blue',]
     neighbors = {
         'WA': ['NT', 'SA'],
         'NT': ['WA', 'SA', 'Q'],
@@ -72,10 +72,18 @@ if __name__ == '__main__':
         'V': ['SA', 'NSW'],
         'T': []
     }
+    csp = Csp.MapColoringCSP(regions, colors, neighbors)
 
-    csp = Csp.MapColoringCSP(regions,colors,neighbors)
-    # Call backtrack
+    # Call basic backtrack
     assignment = {}
     result = backtrack(assignment, csp)
     print(result)
+
+    # Call AC-3 backtrack
+    csp = Csp.MapColoringCSP(regions, colors, neighbors)
+    assignment = {}
+    result = backtrack_AC_3(assignment, csp)
+    print(result)
+
+
 

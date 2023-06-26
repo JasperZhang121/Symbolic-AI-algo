@@ -1,7 +1,7 @@
-from Csp import MapColoringCSP
+from CSP.Csp import MapColoringCSP
 
 
-def Ar_3(region: str, color: str, gamma: MapColoringCSP) -> bool:
+def AC_3(region: str, color: str, gamma: MapColoringCSP) -> bool:
     """Perform arc consistency check (AC-3) on a MapColoringCSP object using Ar_3 algorithm.
 
     Args:
@@ -57,7 +57,9 @@ def revise(neigh: str, regi: str, gamma: MapColoringCSP) -> bool:
         # Loop over all values in the domain of `regi`
         for y in gamma.domains[regi]:
             # Check if there is at least one constraint between `x` and `y`
-            satisfies |= any(gamma.constraints(neigh, x, regi, y))
+            for constraint in gamma.constraints:
+                if constraint[0] == neigh and constraint[1] == regi:
+                    satisfies |= constraint[2](neigh, x, regi, y)
 
         # If there is no value in the domain of `regi` that satisfies the constraint between `x` and `y`,
         # remove `x` from the domain of `neigh`
@@ -66,4 +68,3 @@ def revise(neigh: str, regi: str, gamma: MapColoringCSP) -> bool:
             revised = True
 
     return revised
-

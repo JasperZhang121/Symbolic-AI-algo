@@ -34,7 +34,8 @@ class MapColoringCSP:
         self.domains[region] = self.origin_domains[region]
         for neigh in self.neighbors[region]:
             if self.is_assigned(neigh):
-                self.domains[region].remove(self.domains[neigh])
+                if self.domains[neigh] in self.domains[region]:
+                    self.domains[region].remove(self.domains[neigh])
 
     def is_assigned(self, region: str) -> bool:
         """
