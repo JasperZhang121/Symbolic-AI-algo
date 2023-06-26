@@ -13,12 +13,14 @@ _I'm excited to explore Symbolic AI and its different algorithms and logic reaso
    - BFS/ DFS/ IDS
    - UCS/ Gready/ A-star
    - Min-max/ Alpha-beta prunning
+   - ReadME: [Z_Algo_Details.md](Algo/Z_Algo_Details.md)
 
 - _The second part is about constraint satisfaction problems._ 
   - Constraint graph
   - Variable selection heuristic
   - Value ordering heuristic
   - Arc consistency
+  - ReadME: [Z_Mapping_Problem.md](CSP/Z_Mapping_Problem.md)
  
 - _The third part is about planning, covering things such as:_
   - Linear/non-linear/Serial/Parallel plan
@@ -42,6 +44,6 @@ _For search algorithms, I will not use a tree, but instead, I will use mazes, gr
 ## Extra:
 
 _I will provide detailed docstrings for each algorithm._
-Last update date: 10/06/2023
+Last update date: 26/06/2023
 
 
