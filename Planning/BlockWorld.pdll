@@ -1,0 +1,40 @@
+(:action pick-up
+ :parameters (?b - block ?t - table)
+ :precondition (and (clear ?b) (ontable ?b) (empty ?t))
+ :effect (and
+          (not (ontable ?b))
+          (not (clear ?b))
+          (not (empty ?t))
+          (holding ?b)
+ ))
+
+(:action put-down
+ :parameters (?b - block ?t - table)
+ :precondition (and (holding ?b))
+ :effect (and
+          (not (holding ?b))
+          (clear ?b)
+          (ontable ?b)
+          (empty ?t)
+ ))
+
+(:action stack
+ :parameters (?b1 - block ?b2 - block)
+ :precondition (and (holding ?b1) (clear ?b2))
+ :effect (and
+          (not (holding ?b1))
+          (not (clear ?b2))
+          (clear ?b1)
+          (on ?b1 ?b2)
+ ))
+
+(:action unstack
+ :parameters (?b1 - block ?b2 - block)
+ :precondition (and (on ?b1 ?b2) (clear ?b1) (empty ?t))
+ :effect (and
+          (holding ?b1)
+          (clear ?b2)
+          (not (on ?b1 ?b2))
+          (not (clear ?b1))
+          (not (empty ?t))
+ ))
