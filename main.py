@@ -1,12 +1,11 @@
 import networkx as nx
 import matplotlib.pyplot as plt
+import Algo
+from CSP.solver import backtrack
 
 from Graph import graph as g
 from Graph import graph_distance as gd
-
-import Algo
 from Graph.grid import Grid
-
 from CSP import Csp
 
 if __name__ == '__main__':
@@ -74,10 +73,9 @@ if __name__ == '__main__':
         'T': []
     }
 
-    mappingProblem = Csp.MapColoringCSP(regions,colors,neighbors)
-    print(mappingProblem.get_assignment())
-
-    mappingProblem.assign('WA', 'red')
-    print(mappingProblem.get_assignment())
-
+    csp = Csp.MapColoringCSP(regions,colors,neighbors)
+    # Call backtrack
+    assignment = {}
+    result = backtrack(assignment, csp)
+    print(result)
 

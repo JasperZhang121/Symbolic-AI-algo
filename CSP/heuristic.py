@@ -24,3 +24,4 @@ def select_variable_md(csp: MapColoringCSP):
                 max_var = var
                 max_degree = degree
     return max_var
+

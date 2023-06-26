@@ -13,6 +13,7 @@ class MapColoringCSP:
     def __init__(self, regions: List[str], colors: List[str], neighbors: Dict[str, List[str]]):
         self.variables = regions
         self.domains = {region: colors for region in regions}
+        self.origin_domains = {region: colors for region in regions}
         self.neighbors = neighbors
         self.constraints = []
 
@@ -22,18 +23,18 @@ class MapColoringCSP:
 
     def assign(self, region: str, color: str):
         """
-        Assign a color to a region and propagate constraints to its neighbors.
+        Assign a color to a region
         """
         self.domains[region] = [color]
-        for neighbor in self.neighbors[region]:
-            if color in self.domains[neighbor]:
-                self.domains[neighbor].remove(color)
 
     def unassign(self, region: str):
         """
         Unassign a color from a region and restore its original domain.
         """
-        self.domains[region] = [c for c in self.domains[region] if all(c not in self.domains[neighbor] for neighbor in self.neighbors[region])]
+        self.domains[region] = self.origin_domains[region]
+        for neigh in self.neighbors[region]:
+            if self.is_assigned(neigh):
+                self.domains[region].remove(self.domains[neigh])
 
     def is_assigned(self, region: str) -> bool:
         """
@@ -70,3 +71,5 @@ class MapColoringCSP:
         Return the list of regions.
         """
         return self.variables
+
+
